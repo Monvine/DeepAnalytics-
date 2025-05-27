@@ -64,8 +64,8 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/your-username/DeepAnalytics-Pro.git
-cd DeepAnalytics-Pro
+git clone https://github.com/Monvine/DeepAnalytics-.git
+cd DeepAnalytics-
 
 # 配置环境变量
 cp env.example .env
@@ -281,16 +281,9 @@ npm run dev  # 开发模式查看控制台
 
 ## 📞 联系我们
 
-- **项目主页**: https://github.com/your-username/DeepAnalytics-Pro
-- **问题反馈**: https://github.com/your-username/DeepAnalytics-Pro/issues
-- **邮箱**: your-email@example.com
-
----
-
-<div align="center">
+- **项目主页**: https://github.com/Monvine/DeepAnalytics-
+- **邮箱**: monvine@qq.com
 
 **⭐ 如果这个项目对你有帮助，请给我们一个 Star！**
 
 Made with ❤️ by DeepAnalytics Team
-
-</div> 
