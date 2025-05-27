@@ -1,0 +1,77 @@
+# IDE配置文件
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python缓存文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# 虚拟环境
+venv/
+env/
+ENV/
+
+# Node.js依赖
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 测试和调试文件
+test_*.py
+debug_*.py
+check_*.py
+fix_*.py
+*_test.py
+*_debug.py
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# 构建产物
+build/
+dist/
+*.egg-info/
+
+# 环境变量文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 配置文件中的敏感信息
+config/local.py
+config/production.py
+
+# 敏感数据文件
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# 进程ID文件
+.pids
+
+# 报告文件
+backend/reports/ 

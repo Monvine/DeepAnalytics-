@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # MySQL数据库
+  mysql:
+    image: mysql:8.0
+    container_name: deepanalytics-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init_database.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - deepanalytics-network
+
+  # Redis缓存
+  redis:
+    image: redis:7-alpine
+    container_name: deepanalytics-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - deepanalytics-network
+
+  # 主应用
+  app:
+    build: .
+    container_name: deepanalytics-app
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - DEFAULT_COOKIE=${DEFAULT_COOKIE}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    ports:
+      - "8000:8000"
+      - "3000:3000"
+    depends_on:
+      - mysql
+      - redis
+    volumes:
+      - ./backend/logs:/app/backend/logs
+      - ./backend/reports:/app/backend/reports
+    networks:
+      - deepanalytics-network
+
+volumes:
+  mysql_data:
+
+networks:
+  deepanalytics-network:
+    driver: bridge 

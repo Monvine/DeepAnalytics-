@@ -1,0 +1,311 @@
+.data-dashboard {
+  background: linear-gradient(135deg, #0c1426 0%, #1a2332 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: #fff;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-header h2 {
+  background: linear-gradient(45deg, #1890ff, #52c41a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* 指标卡片样式 */
+.metric-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.metric-card:hover::before {
+  transform: translateX(100%);
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.metric-content {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.metric-icon {
+  font-size: 32px;
+  margin-right: 16px;
+  padding: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-info {
+  flex: 1;
+}
+
+.metric-title {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.metric-value {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.metric-trend {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 图表卡片样式 */
+.chart-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.chart-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.chart-card .ant-card-head {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.chart-card .ant-card-head-title {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.chart-card .ant-card-head-title span {
+  color: #fff !important;
+}
+
+.chart-card .ant-card-head-title .anticon {
+  color: inherit !important;
+}
+
+.chart-card .ant-card-body {
+  background: transparent;
+}
+
+/* 标签云样式 */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.tag-item {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tag-item:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 活动时间线样式 */
+.activity-timeline {
+  padding: 20px;
+}
+
+.activity-timeline .ant-timeline-item-content {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.activity-item {
+  padding: 8px 0;
+}
+
+.activity-stats {
+  margin-top: 8px;
+}
+
+.activity-stats .ant-badge {
+  margin-right: 12px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .data-dashboard {
+    padding: 10px;
+  }
+  
+  .dashboard-header h2 {
+    font-size: 20px;
+  }
+  
+  .metric-content {
+    padding: 15px;
+  }
+  
+  .metric-icon {
+    font-size: 24px;
+    margin-right: 12px;
+  }
+  
+  .metric-value {
+    font-size: 20px;
+  }
+  
+  .tag-cloud {
+    padding: 15px;
+  }
+  
+  .tag-item {
+    font-size: 12px !important;
+    padding: 4px 8px;
+  }
+}
+
+/* 加载动画 */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* 数字滚动动画 */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.metric-value span {
+  animation: countUp 0.8s ease-out;
+}
+
+/* 图表工具提示样式 */
+.recharts-tooltip-wrapper {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 进度圆环样式 */
+.ant-progress-circle .ant-progress-text {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* 时间线样式覆盖 */
+.ant-timeline-item-head {
+  background-color: transparent !important;
+}
+
+.ant-timeline-item-tail {
+  border-left: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 卡片标题样式 */
+.ant-card-head {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.ant-card-head-title {
+  color: #fff !important;
+}
+
+/* Badge样式覆盖 */
+.ant-badge-count {
+  font-size: 10px !important;
+  min-width: 16px !important;
+  height: 16px !important;
+  line-height: 16px !important;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+} 

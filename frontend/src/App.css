@@ -1,0 +1,33 @@
+/* 全局修复卡片标题颜色问题 */
+.ant-card-head-title {
+  color: inherit !important;
+}
+
+.ant-card-head-title span {
+  color: inherit !important;
+}
+
+.ant-card-head-title .anticon {
+  color: inherit !important;
+}
+
+/* 确保深色主题下的标题可见性 */
+.ant-card-head {
+  color: #262626;
+}
+
+.ant-card-head[style*="background"] .ant-card-head-title {
+  color: #fff !important;
+}
+
+.ant-card-head[style*="background"] .ant-card-head-title span {
+  color: #fff !important;
+}
+
+.ant-card-head[style*="gradient"] .ant-card-head-title {
+  color: #fff !important;
+}
+
+.ant-card-head[style*="gradient"] .ant-card-head-title span {
+  color: #fff !important;
+} 
