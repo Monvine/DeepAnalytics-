@@ -199,21 +199,6 @@ docker build -t deepanalytics-pro .
 docker run -p 8000:8000 -p 3000:3000 deepanalytics-pro
 ```
 
-### ☁️ 云端部署
-
-支持部署到：
-- **AWS EC2** + RDS
-- **阿里云 ECS** + RDS
-- **腾讯云 CVM** + TencentDB
-- **Vercel** (前端) + **Railway** (后端)
-
-### 📈 性能优化
-
-- **Redis 缓存**：缓存热点数据
-- **数据库索引**：优化查询性能
-- **CDN 加速**：静态资源加速
-- **负载均衡**：支持集群部署
-
 ## 🔍 故障排除
 
 ### 常见问题
